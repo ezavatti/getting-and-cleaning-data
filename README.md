@@ -108,43 +108,41 @@ In order to run the code, make sure that the reshape2 and dplry pacjages are ins
 
 The code follows the steps:
 
-# GETS DATA for X_test
+1. GETS DATA for X_test
 
-# Get data for X_train
+2. Get data for X_train
 
-#Get data for y_test (activity by subjects in test)
+3. Get data for y_test (activity by subjects in test)
 
-# Get data for y_train (activity by subjects in train)
+4.  Get data for y_train (activity by subjects in train)
 
-# Get data for subjects_test
+5.  Get data for subjects_test
 
-# Get data for subjects_train
+6. Get data for subjects_train
 
-#Get data for Activity_labels
+7. Get data for Activity_labels
 
-#Renames the "Activity"
+8. Renames the "Activity"
 
-# Mergs y_train and y_test row-wise into Y_merged
+9. Mergs y_train and y_test row-wise into Y_merged
 
-# Change name of colum in Y_merged to "Activity"
+10. Change name of colum in Y_merged to "Activity"
 
-colnames(Y_merged)<- c("Test")
+11. Merges subject_test and subject_train row-wise into a file called: Subject_Merged
 
-#Merges subject_test and subject_train row-wise into a file called: Subject_Merged
+12. Change name of the column in Subject_Merged with: Subject
 
-#Change name of the column in Subject_Merged with: Subject
+13. Get data for features
 
-#Get data for features
+14.  Transpose the features database
 
-# Transpose the features database
+15.  Merge row-wise X_train and X_test into X_merged
 
-# Merge row-wise X_train and X_test into X_merged
+16. Change the columns' names of the merged data with features file
 
-#Change the columns' names of the merged data with features file
+17. Merge column-wise Subject_Merged, Y_Merged, 
 
-#Merge column-wise Subject_Merged, Y_Merged, 
+18. Extracts only the measurements on the mean and standard deviation for each measurement
 
-#Extracts only the measurements on the mean and standard deviation for each measurement
+19. Gets tidy data : mean of measurement by Subject and Activity
 
-# Gets tidy data : mean of measurement by Subject and Activity
-final_mean<-aggregate(.~ Activity + Subject, data= o_mean_std, mean)
