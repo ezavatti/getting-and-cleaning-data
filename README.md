@@ -1,4 +1,4 @@
-# getting-and-cleaning-data
+﻿# getting-and-cleaning-data
 PROJECT 1- GETTING AND CLEANING DATA- COURSER - 2015
 
 The purpose of this project is to demonstrate student’s ability to collect, work with, and clean a data set. 
@@ -16,6 +16,7 @@ a.	By subject and then by Activity
 b.	By Activity and then by subject
 
 At the end of the following "README" the description of the R-code
+
 
 README provided by source of data for the Project
 

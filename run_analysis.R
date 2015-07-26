@@ -85,20 +85,18 @@ colnames(total)[2]<- "Activity"
 
 colnames(total)[3]<- "Activity code"
 
-# total$Subject<- as.data.frame(total$Subject)
-
-# total$Activity<- as.data.frame(total$Activity)
 
 #Extracting only the measurements on the mean and standard deviation for each measurement
 
-# o_mean_std<- melt(total, id = c("Subject", "Activity", measure.vars = c(colnames(total)[grep("mean",colnames(total))], colnames(total)[grep("std",colnames(total))])))
-
-# o_mean_std<- total[,c(colnames(total)[grep("mean",colnames(total))], colnames(total)[grep("std",colnames(total))])]
 
 o_mean_std<- total[,c("Subject", "Activity", colnames(total)[grep("mean",colnames(total))], colnames(total)[grep("std",colnames(total))])]
 
-# colnames(o_mean_std)[2]<- "Activity"
-# colnames(o_mean_std)[1]<- "Subject"
 
 # Getting tidy data : mean of measurement by Subject and Activity
 final_mean<-aggregate(.~ Activity + Subject, data= o_mean_std, mean)
+
+write.table(final_mean, file= "allmeans", row.names = FALSE)
+
+final_mean<-aggregate(.~ Subject + Activity, data= o_mean_std, mean)
+
+write.table(final_mean, file= "allmeans1", row.names = FALSE)
